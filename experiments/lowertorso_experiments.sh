@@ -1,0 +1,6 @@
+#!/bin/bash
+
+python training_fulldataset_lowertorso_ablation.py -e 'ablationstudy_bladder_segonly_run1' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_bladder_healthyfile.txt' -df 'TCIA_bladder_diseasefile.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -et "segonly"
+python training_fulldataset_lowertorso_ablation.py -e 'ablationstudy_bladder_segrecon_run1' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_bladder_healthyfile.txt' -df 'TCIA_bladder_diseasefile.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -et "segrecon"
+python training_fulldataset_lowertorso_ablation.py -e 'ablationstudy_bladder_segreconhealthy_run1' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_bladder_healthyfile.txt' -df 'TCIA_bladder_diseasefile.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -et "segreconhealthy"
+python fulllmodel_fulldataset_skipconnections_smallerlatent_bladderroi.py -e 'fullmodel_bladder_run1_drop3' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_bladder_healthyfile.txt' -df 'TCIA_bladder_diseasefile.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -ds 3

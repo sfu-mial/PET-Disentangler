@@ -1,0 +1,6 @@
+#!/bin/bash
+
+python training_fulldataset_uppertorso_ablation.py -e 'ablationstudy_segonly_run3' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_aorta_healthy.txt' -df 'TCIA_aorta_disease.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 1. -wc 0.01 -et "segonly"
+python training_fulldataset_uppertorso_ablation.py -e 'ablationstudy_segrecon_run3' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_aorta_healthy.txt' -df 'TCIA_aorta_disease.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -et "segrecon"
+python training_fulldataset_uppertorso_ablation.py -e 'ablationstudy_segreconhealthy_run3' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_aorta_healthy.txt' -df 'TCIA_aorta_disease.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -et "segreconhealthy"
+python training_fulldataset_uppertorso_petdisentangler.py -e 'fullmodel_run3_drop3_evenmoresegweight' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_aorta_healthy.txt' -df 'TCIA_aorta_disease.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -ds 3

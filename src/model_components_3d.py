@@ -178,7 +178,7 @@ class critic_disentanglement3D_smallerlatent(nn.Module):
         x = self.block2(x)
         x = self.block3(x)
         return x
-    
+        
 class decoder3D_spade_dropped3(nn.Module):
     def __init__(self, out_channels=1, features=[64, 128, 256, 512], final_activation = "tanh"):
         super(decoder3D_spade_dropped3, self).__init__()

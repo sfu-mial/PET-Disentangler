@@ -60,7 +60,7 @@ subset_disease = disease_files[:150]
 
 healthy = []
 for example in subset_healthy:
-    path = example.strip().split('Documents/')[-1]
+    path = example.strip().split('dataset/')[-1]
     petf = f"{root_dir}{path}pet_crop_img.nii.gz"
     ctf = f"{root_dir}{path}ct_crop_img.nii.gz"
     maskf = f"{root_dir}{path}mask_crop_img.nii.gz"
@@ -68,7 +68,7 @@ for example in subset_healthy:
     
 disease = []
 for example in subset_disease:
-    path = example.strip().split('Documents/')[-1]
+    path = example.strip().split('dataset/')[-1]
     petf = f"{root_dir}{path}pet_crop_img.nii.gz"
     ctf = f"{root_dir}{path}ct_crop_img.nii.gz"
     maskf = f"{root_dir}{path}mask_crop_img.nii.gz"

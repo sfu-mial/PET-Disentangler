@@ -26,14 +26,26 @@ unzip -q dataset/nifti.zip
 The dataset is publically available on TCIA in DICOM format with scripts to convert the files to NIfTI format available [here](https://github.com/lab-midas/TCIA_processing).
 
 ## Preprocessing
-The preprocessing steps in this work include 1) leveraging TotalSegmentator to obtain organ segmentations for each study, 2) identifying upper torso and lower torso field-of-views (FOV) based on aorta and bladder coordinates, respectively, 3) determining whether these FOVs are healthy or contain disease, and finally, 4) obtaining the upper and lower torso crops for each study. All of these steps are performed in the preprocessing.py file which expects the FDG-PET-CT-Lesions dataset directory to be within the dataset directory. The preprocessing can be performed using the following command:
+The preprocessing steps in this work include: 
+- leveraging TotalSegmentator to obtain organ segmentations for each study,
+- identifying upper torso and lower torso field-of-views (FOV) based on aorta and bladder coordinates, respectively,
+- determining whether these FOVs are healthy or contain disease, and
+- obtaining the upper and lower torso crops for each study.
+
+All of these steps are performed in the preprocessing.py file which expects the FDG-PET-CT-Lesions dataset directory to be within the dataset directory. The preprocessing can be performed using the following command:
 
 ```bash
 python src/preprocessing.py
 ```
 
 ## Training
-TODO
+Within the 'experiments' directory are three files that run the experiments for the SNMMI, upper torso, and lower torso experiments, along with the final hyperparameters. The training files include:
+- `training_SNMMI_baseline_segmentationonly.py`: trains the baseline segmentation model for SNMMI upper torso experiment on a subset of the TCIA Whole-body FDG-PET/CT dataset.
+- `training_SNMMI_petdisentangler.py`: trains PET-Disentangler variants (i.e., full-skip, no-skip, optimal) for SNMMI upper torso experiment on a subset of the TCIA Whole-body FDG-PET/CT dataset.
+- `training_fulldataset_uppertorso_ablation.py`: trains ablation experiments on upper torso data from full dataset of TCIA Whole-body FDG PET/CT dataset. 
+- `training_fulldataset_uppertorso_petdisentangler.py`: trains PET-Disentangler on upper torso data from full dataset of TCIA Whole-body FDG PET/CT dataset. 
+- `training_fulldataset_lowertorso_ablation.py`: trains ablations experiments on lower torso data from full dataset. 
+- `training_fulldataset_lowertorso_petdisentangler.py`: trains PET-Disentangler on lower torso data from full dataset 
 
 ## Citation
 If you find this work or implementation useful, please cite our paper: 

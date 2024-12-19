@@ -19,4 +19,5 @@ python training_fulldataset_lowertorso_ablation.py -e 'ablationstudy_bladder_seg
 python training_fulldataset_lowertorso_ablation.py -e 'ablationstudy_bladder_segrecon_run1' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_bladder_healthyfile.txt' -df 'TCIA_bladder_diseasefile.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -et "segrecon"
 # training lower torso, segreconhealthy experiment by setting experiment type variable et to "segreconhealthy":
 python training_fulldataset_lowertorso_ablation.py -e 'ablationstudy_bladder_segreconhealthy_run1' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_bladder_healthyfile.txt' -df 'TCIA_bladder_diseasefile.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -et "segreconhealthy"
+# training lower torso, PET-Disentangler with optimal configuration of dropping 3 skip connections:
 python training_fulldataset_lowertorso_petdisentangler.py -e 'fullmodel_bladder_run1_drop3' -sd '../checkpoints' -ep 300 -s 0 -b 2 -r './' -hf 'TCIA_bladder_healthyfile.txt' -df 'TCIA_bladder_diseasefile.txt' -dt 'test2v2' -wfg 0.001 -wr 10. -ws 100. -wc 0.01 -ds 3

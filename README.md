@@ -39,7 +39,7 @@ python src/preprocessing.py
 ```
 
 ## Training
-Within the 'experiments' directory are three files that run the experiments for the SNMMI, upper torso, and lower torso experiments, along with the final hyperparameters. The training files include:
+Within the `experiments` directory are three files that run the experiments for the SNMMI, upper torso, and lower torso experiments, along with the final hyperparameters. The training files include:
 - `training_SNMMI_baseline_segmentationonly.py`: trains the baseline segmentation model for SNMMI upper torso experiment on a subset of the TCIA Whole-body FDG-PET/CT dataset.
 - `training_SNMMI_petdisentangler.py`: trains PET-Disentangler variants (i.e., full-skip, no-skip, optimal) for SNMMI upper torso experiment on a subset of the TCIA Whole-body FDG-PET/CT dataset.
 - `training_fulldataset_uppertorso_ablation.py`: trains ablation experiments on upper torso data from full dataset of TCIA Whole-body FDG PET/CT dataset. 
